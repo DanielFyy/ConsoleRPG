@@ -41,7 +41,7 @@ public:
     
     bool battle(Player* player, Enemy* enemy); //runs combat calculations and displays descriptions
 
-    void play_music(const std::string& music_file);
+    void play_music(const std::string& music_file); //plays music from file using SFML
 private:
     std::unique_ptr<Player> player;
     std::unique_ptr<Enemy> current_enemy;

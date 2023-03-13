@@ -279,7 +279,8 @@ bool Scene::chest()
             current_enemy.reset(nullptr);
             current_enemy = std::make_unique<Mimic>();
             if (battle(player.get(), current_enemy.get()) == true)
-            {
+            {   
+                clear_screen();
                 switch (player->get_type())
                 {
                 case warrior:
