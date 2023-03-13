@@ -15,7 +15,7 @@ Mimic::Mimic()
     set_defense(100);
 
     const std::string mimic_introduction = "The chest springs to life, revealing a drooling mouth filled with rows of sharp teeth.\n";
-    const std::string mimic_bite = " snaps its mouth at you";
+    const std::string mimic_bite = " snaps its jaws at you";
     set_encounter_description(mimic_introduction);
     set_attack_descriptions({mimic_bite});
 }
