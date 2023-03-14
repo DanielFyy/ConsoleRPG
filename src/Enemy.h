@@ -25,7 +25,7 @@ public:
 
     void set_max_health(const int max_health);
     void set_health(const int health);
-    void set_encounter_description(const std::string& description);
+    void set_encounter_description(const std::string description);
 
     const int get_max_health() const;
     const int get_health() const;

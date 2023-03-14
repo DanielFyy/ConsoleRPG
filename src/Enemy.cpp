@@ -73,7 +73,7 @@ void Enemy::set_health(const int health)
     this->health = health;
 }
 
-void Enemy::set_encounter_description(const std::string& description)
+void Enemy::set_encounter_description(const std::string description)
 {
     encounter_description = description;
 }

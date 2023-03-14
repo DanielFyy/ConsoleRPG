@@ -52,14 +52,20 @@ void Scene::volume_menu()
         switch (choose({"increase", "decrease", "back"}))
         {
         case increase:
-            volume += 10;
-            if (volume <= 90);
+            if (volume <= 90) 
+            {
+                volume += 10;
                 music.setVolume(volume);
+            }
             break;
         case decrease:
-            volume -= 10;
+            
             if (volume >= 10)
+            {
+                volume -= 10;
                 music.setVolume(volume);
+            }
+                
             break;
         case back:
             return;

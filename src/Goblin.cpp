@@ -5,8 +5,8 @@ Goblin::Goblin()
     created++;
 
     set_name("Goblin");
-    set_max_health(9);
-    set_health(9);
+    set_max_health(13);
+    set_health(13);
     set_min_damage(2);
     set_max_damage(6);
     set_accuracy(90);
