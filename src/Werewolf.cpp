@@ -12,7 +12,7 @@ Werewolf::Werewolf()
     set_accuracy(100);
     set_critical(20);
     set_defense(33);
-    const std::string werewolf_introduction = "As you enter the village a piercing, blood curdling howl meets your ears.\nTurning to face the sound, you see werewolf leap down you from one of the nearby buildings.\n";
+    const std::string werewolf_introduction = "As you enter the village a piercing, a piercing howl meets your ears.\nTurning to face the sound, you see a werewolf leap down you from one of the nearby buildings.\n";
     const std::string werewolf_claw = " swipes at you with its claws";
     const std::string werewolf_bite = " lunges to bite you";
     set_encounter_description(werewolf_introduction);
