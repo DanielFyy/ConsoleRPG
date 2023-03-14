@@ -52,13 +52,13 @@ void Scene::volume_menu()
         switch (choose({"increase", "decrease", "back"}))
         {
         case increase:
-            volume += 5;
-            if (volume <= 95);
+            volume += 10;
+            if (volume <= 90);
                 music.setVolume(volume);
             break;
         case decrease:
-            volume -= 5;
-            if (volume >= 5)
+            volume -= 10;
+            if (volume >= 10)
                 music.setVolume(volume);
             break;
         case back:
@@ -399,7 +399,7 @@ void Scene::items_menu()
     } while (true);
 }
 
-void Scene::selected_item_menu(const int& index)
+void Scene::selected_item_menu(const int index)
 {   
     std::string equipable;
     enum item_menu_choice {equip, unequip, details, back};
@@ -483,7 +483,7 @@ bool Scene::battle(Player* player, Enemy* enemy)
 
 }
 
-void Scene::play_music(const std::string& music_file)
+void Scene::play_music(const std::string music_file)
 {
     music.stop();
     music.openFromFile(music_file);

@@ -14,6 +14,10 @@ Wizard::Wizard(const std::string& name)
     const std::string wizard_elemental = "Your conjured water elemental attacks the ";
     const std::string wizard_missiles = "You shoot arcane missiles towards the ";
     set_attack_descriptions({wizard_lightning, wizard_fireball, wizard_elemental, wizard_missiles});
+
+    const std::string wizard_armor = ", but your mage armor blocks the attack.\n";
+    const std::string wizard_elemental_block = ", but your conjured water elemental protects you from the attack.\n";
+    set_defense_descriptions({wizard_armor, wizard_elemental_block});
 }
 
 Wizard::~Wizard()

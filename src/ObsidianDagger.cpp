@@ -9,7 +9,6 @@ ObsidianDagger::ObsidianDagger()
     set_max_damage(27);
     set_accuracy(95);
     set_critical(33);
-    set_dodge(0);
     set_defense(0);
     set_slot(weapon);
 }

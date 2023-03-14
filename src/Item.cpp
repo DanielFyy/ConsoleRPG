@@ -25,19 +25,18 @@ void Item::print_item_stats()
     else if (slot == armor)
     {   
         display_text("Defense: " + std::to_string(get_defense()) + "%\n");
-        display_text("Dodge: " + std::to_string(get_dodge()) + "%\n");
         press_any_key();
     }
 
     
 }
 
-void Item::set_slot(const item_slot& slot)
+void Item::set_slot(const item_slot slot)
 {
     this->slot = slot;
 }
 
-const item_slot& Item::get_slot() const
+const item_slot Item::get_slot() const
 {
     return slot;
 }

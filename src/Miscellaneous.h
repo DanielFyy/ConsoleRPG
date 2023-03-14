@@ -20,9 +20,9 @@ extern int destroyed;
 extern int volume;
 extern int typing_speed;
 
-void display_text(const std::string& text); //displays texdt letter by letter according to typing_speed
+void display_text(const std::string text); //displays texdt letter by letter according to typing_speed
 
-const std::string string_to_lower(const std::string& string); //returns an all lower case string of the parameter string
+const std::string string_to_lower(const std::string string); //returns an all lower case string of the parameter string
 
 int choose(const std::vector <std::string>& choices); //returns a value depending on the player input in accordance to the vector parameter (used for switch statement during scenes)
 

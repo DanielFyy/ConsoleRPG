@@ -6,19 +6,19 @@ int destroyed = 0;
 int volume = 50;
 int typing_speed = 0;
 
-void display_text(const std::string& text)
+void display_text(const std::string text)
 {   
-    for (const char& letter : text) 
+    for (const char letter : text) 
     {   
         std::cout << letter;
         std::this_thread::sleep_for(std::chrono::milliseconds(typing_speed));
     }
 }
 
-const std::string string_to_lower(const std::string& string)
+const std::string string_to_lower(const std::string string)
 {   
     std::string to_lower;
-    for (const char& letter : string)
+    for (const char letter : string)
         to_lower += tolower(letter);
 
     return to_lower;

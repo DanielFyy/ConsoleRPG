@@ -9,8 +9,7 @@ LeatherArmor::LeatherArmor()
     set_max_damage(0);
     set_accuracy(0);
     set_critical(0);
-    set_dodge(-5);
-    set_defense(20);
+    set_defense(50);
     set_slot(armor);
 }
 

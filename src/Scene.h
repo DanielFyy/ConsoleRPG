@@ -37,11 +37,11 @@ public:
     void inventory_menu(); //menu that allows the player to see their character stats or view their items
 
     void items_menu(); //displays all items currently in the player inventory
-    void selected_item_menu(const int& index); //menu where the player can equip, unequip, or see the stats of an item
+    void selected_item_menu(const int index); //menu where the player can equip, unequip, or see the stats of an item
     
     bool battle(Player* player, Enemy* enemy); //runs combat calculations and displays descriptions
 
-    void play_music(const std::string& music_file); //plays music from file using SFML
+    void play_music(const std::string music_file); //plays music from file using SFML
 private:
     std::unique_ptr<Player> player;
     std::unique_ptr<Enemy> current_enemy;

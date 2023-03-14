@@ -37,20 +37,21 @@ const int Player::attack()
     return attack_damage;
 }
 
-void Player::take_damage(const int& enemy_damage, const int& enemy_accuracy)
+void Player::take_damage(const int enemy_damage, const int enemy_accuracy)
 {
-    //move to miscellaneous
     std::random_device random;
     std::mt19937 rng{random()};
-    std::uniform_int_distribution<int> number{1, 100};
+    std::uniform_int_distribution<int> accuracy{1, 100};
 
-    int damage_taken = enemy_damage * this->get_defense() / 100;
-    if (enemy_accuracy < number(rng)) 
-        display_text(", but you avoid the attack.\n");
+    int defense = defense_descriptions.size()-1;
+    std::uniform_int_distribution<int> number{0, defense};
+
+    if (enemy_accuracy < accuracy(rng)) 
+        display_text(defense_descriptions[number(rng)]);
     else
     {
-        display_text(", dealing " + std::to_string(damage_taken) + " damage.\n");
-        this->set_health(this->get_health() - damage_taken);
+        display_text(", dealing " + std::to_string(enemy_damage) + " damage.\n");
+        this->set_health(this->get_health() - enemy_damage);
     }
 }
 
@@ -59,9 +60,14 @@ void Player::set_attack_descriptions(const std::vector <std::string>& attack_des
     this->attack_descriptions = attack_descriptions;
 }
 
+void Player::set_defense_descriptions(const std::vector <std::string>& defense_descriptions)
+{
+    this->defense_descriptions = defense_descriptions;
+}
+
 void Player::set_stats()
 {
-    int min_damage = 1, max_damage = 2, accuracy = 95, critical = 5, dodge = 25, defense = 100;
+    int min_damage = 1, max_damage = 2, accuracy = 95, critical = 5, defense = 0;
 
     if (equipped_items[weapon] != nullptr) 
     {
@@ -74,15 +80,13 @@ void Player::set_stats()
 
     if (equipped_items[armor] != nullptr) 
     {   
-        dodge += equipped_items[armor]->get_dodge();
-        defense -= equipped_items[armor]->get_defense();
+        defense = equipped_items[armor]->get_defense();
     }
 
     set_min_damage(min_damage);
     set_max_damage(max_damage);
     set_accuracy(accuracy);
     set_critical(critical);
-    set_dodge(dodge);
     set_defense(defense);
 }
 
@@ -135,12 +139,12 @@ const std::vector <std::unique_ptr<Item>>& Player::get_inventory() const
     return inventory;
 }
 
-Item* Player::get_item(const int& index)
+Item* Player::get_item(const int index)
 {
     return inventory[index].get();
 }
 
-bool Player::is_equipped(const int& index)
+bool Player::is_equipped(const int index)
 {   
     for (const Item* item : equipped_items)
         if (inventory[index].get() == item)
@@ -161,19 +165,19 @@ void Player::print_stats() const
     switch (get_type())
     {
     case warrior:
-        type_string = "warrrior";
+        type_string = "Warrrior";
         break;
     case wizard:
-        type_string = "wizard";
+        type_string = "Wizard";
         break;
     case rogue:
-        type_string = "rogue";
+        type_string = "Rogue";
         break;
     case druid:
-        type_string = "druid";
+        type_string = "Druid";
         break;
     default:
-        type_string = "classless";
+        type_string = "Legendary";
         break;
     }
 
@@ -194,37 +198,36 @@ void Player::print_stats() const
     display_text("Damage: " + std::to_string(get_min_damage()) + "-" + std::to_string(get_max_damage()) + "\n");
     display_text("Accuracy: " + std::to_string(get_accuracy()) + "%\n");
     display_text("Critical Hit Chance: " + std::to_string(get_critical()) + "%\n");
-    display_text("Defense: " + std::to_string(100 - get_defense()) + "%\n");
-    display_text("Dodge Chance: " + std::to_string(get_dodge()) + "%\n");
+    display_text("Defense: " + std::to_string(get_defense()) + "%\n");
     press_any_key();
 }
 
-void Player::set_type(const player_type& type)
+void Player::set_type(const player_type type)
 {
     this->type = type;
 }
 
-const player_type& Player::get_type() const
+const player_type Player::get_type() const
 {
     return type;
 }
 
-void Player::set_max_health(const int& max_health)
+void Player::set_max_health(const int max_health)
 {
     this->max_health = max_health;
 }
 
-void Player::set_health(const int& health)
+void Player::set_health(const int health)
 {
     this->health = health;
 }
 
-const int& Player::get_max_health() const
+const int Player::get_max_health() const
 {
     return max_health;
 }
 
-const int& Player::get_health() const
+const int Player::get_health() const
 {
     return health;
 }

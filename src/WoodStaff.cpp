@@ -9,7 +9,6 @@ WoodStaff::WoodStaff()
     set_max_damage(10);
     set_accuracy(90);
     set_critical(5);
-    set_dodge(0);
     set_defense(0);
     set_slot(weapon);
 }

@@ -9,7 +9,6 @@ ArcaneCrystal::ArcaneCrystal()
     set_max_damage(30);
     set_accuracy(90);
     set_critical(20);
-    set_dodge(0);
     set_defense(0);
     set_slot(weapon);
 }

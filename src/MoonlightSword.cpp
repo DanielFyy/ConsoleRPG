@@ -9,7 +9,6 @@ MoonlightSword::MoonlightSword()
     set_max_damage(18);
     set_accuracy(105);
     set_critical(15);
-    set_dodge(0);
     set_defense(0);
     set_slot(weapon);
 }

@@ -9,7 +9,6 @@ MagicWand::MagicWand()
     set_max_damage(12);
     set_accuracy(90);
     set_critical(15);
-    set_dodge(0);
     set_defense(0);
     set_slot(weapon);
 }
