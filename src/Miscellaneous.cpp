@@ -4,7 +4,7 @@
 int created = 0;
 int destroyed = 0;
 int volume = 50;
-int typing_speed = 0;
+int typing_speed = 50;
 
 void display_text(const std::string text)
 {   
