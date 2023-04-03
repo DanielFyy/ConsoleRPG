@@ -13,9 +13,9 @@ GreenDragon::GreenDragon()
     set_critical(5);
     set_defense(25);
 
-    const std::string green_dragon_introduction = "Walking through the forest, just as the sun begins to set, you arrive at a clearing.\nInside the clearing, you immediately notice a large, emerald green dragon, its nostril's flaring as it sleeps.\nIn an instant, the dragon's eyelids open, burning yellow eyes glaring at you.\n";
+    const std::string green_dragon_introduction = "Walking through the forest, you arrive at a clearing.\nInside the clearing, you immediately notice a large reptilian creature, an emerald green dragon, its nostril's flaring as it sleeps.\nIn an instant, the dragon's eyelids open, burning yellow eyes glaring at you.\n";
     
-    const std::string green_dragon_breath = " opens its mouth and exhales a flame blast towards you";
+    const std::string green_dragon_breath = " opens its mouth and exhales fire towards you";
     const std::string green_dragon_tail = " lashes out at you with its tail";
     set_encounter_description(green_dragon_introduction);
     set_attack_descriptions({green_dragon_breath, green_dragon_tail});

@@ -109,7 +109,7 @@ void Scene::introduction()
     do 
     {   
         clear_screen();
-        display_text("Introduction Text.\n> Begin\n> Exit\n");
+        display_text("You are about to embark on a dangerous journey. Failure will result in having to start over.\nDo you wish to begin?\n> Begin\n> Exit\n");
         enum introduction_choice {begin, exit};
 
         switch (choose({"begin", "exit"}))
@@ -144,7 +144,7 @@ void Scene::setup_player()
         case warrior:
             player = std::make_unique<Warrior>(player_name);
             clear_screen();
-            display_text("Warrior Introduction\n");
+            display_text("You have chosen to become a warrior. " + player_name + ", your journey begins.\n");
             player->add_item(std::make_unique<Longsword>());
             player->add_item(std::make_unique<ChainmailArmor>());
             press_any_key();
@@ -153,7 +153,7 @@ void Scene::setup_player()
         case wizard:
             player = std::make_unique<Wizard>(player_name);
             clear_screen();
-            display_text("Wizard Introduction\n");
+            display_text("You have chosen to become a wizard. " + player_name + " your journey begins.\n");
             player->add_item(std::make_unique<MagicWand>());
             player->add_item(std::make_unique<WizardRobe>());
             press_any_key();
@@ -162,7 +162,7 @@ void Scene::setup_player()
         case rogue:
             player = std::make_unique<Rogue>(player_name);
             clear_screen();
-            display_text("Rogue Introduction\n");
+            display_text("You have chosen to become a rogue. " + player_name + " your journey begins.\n");
             player->add_item(std::make_unique<Dagger>());
             player->add_item(std::make_unique<LeatherArmor>());
             press_any_key();
@@ -171,7 +171,7 @@ void Scene::setup_player()
         case druid:
             player = std::make_unique<Druid>(player_name);
             clear_screen();
-            display_text("Druid Introduction\n");
+            display_text("You have chosen to become a druid. " + player_name + " your journey begins.\n");
             player->add_item(std::make_unique<WoodStaff>());
             player->add_item(std::make_unique<SimpleRobe>());
             press_any_key();
