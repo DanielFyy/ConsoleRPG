@@ -3,7 +3,6 @@
 WizardRobe::WizardRobe()
 {   
     created++;
-
     set_name("Wizard Robe");
     set_min_damage(0);
     set_max_damage(0);
@@ -14,6 +13,6 @@ WizardRobe::WizardRobe()
 }
 
 WizardRobe::~WizardRobe()
-{
+{   
     destroyed++;
 }

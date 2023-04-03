@@ -3,7 +3,7 @@
 Warrior::Warrior(const std::string& name)
 {   
     created++;
-    
+    std::cout << "Created Warrior\n";
     set_name(name);
     set_max_health(42);
     set_health(42);
@@ -18,6 +18,7 @@ Warrior::Warrior(const std::string& name)
 }
 
 Warrior::~Warrior()
-{
+{   
+    std::cout << "Destroyed Warrior\n";
     destroyed++;
 }
